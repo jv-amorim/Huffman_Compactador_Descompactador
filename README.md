@@ -15,8 +15,9 @@ Antes de realizar a compilação do algoritmo, configure as seguintes variáveis
  - arquivo_input_compactar : endereço e nome do arquivo texto que deseja compactar.
  - arquivo_output_compactar : endereço e nome do arquivo binário de saída. Trata-se do texto compactado.
  - arquivo_input_descompactar : endereço e nome do arquivo binário que deseja descompactar.
- - arquivo_output_descompactar : ndereço e nome do arquivo texto de saída. Trata-se do texto descompactado.
- (Caso os arquivos estejam na mesma pasta do código fonte, basta digitar os nomes dos arquivos (com a extensão .txt).)
+ - arquivo_output_descompactar : endereço e nome do arquivo texto de saída. Trata-se do texto descompactado.
+ 
+(Caso os arquivos estejam na mesma pasta do código fonte, basta digitar os nomes dos arquivos (com a extensão .txt).)
 
 Após realizar a configuração das variáveis acima, basta compilar e depois iniciar o executável gerado. Com o executável iniciado, digite C caso o desejado seja realizar uma compactação ou D, caso o desejado seja realizar uma descompactação. O último passo é só aguardar o algoritmo rodar e realizar o processo de compactação ou descompactação.
 

@@ -24,7 +24,7 @@ int main()
     }
     else if(resposta == 'D' || resposta == 'd')
     {	
-		    descompactar_arquivo(arquivo_input_descompactar, arquivo_output_descompactar);
+	descompactar_arquivo(arquivo_input_descompactar, arquivo_output_descompactar);
     }
 
     return 0;

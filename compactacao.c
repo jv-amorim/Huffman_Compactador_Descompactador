@@ -218,7 +218,7 @@ void compactar_arquivo(char* nomeArquivoInput, char* nomeArquivoOutput)
     TQueue *filaASCII, *tabela_prefixos;
     TNode *tree;
 
-    printf("\nCompactacao inicializada...\n");
+    printf("Compactacao inicializada...\n");
 
     filaASCII = criarFilaASCII(nomeArquivoInput);
 

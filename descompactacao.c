@@ -206,7 +206,7 @@ void descompactar_arquivo(char* nome_arquivo_input, char* nome_arquivo_output)
     {
         fclose(arq_bin);
 
-        printf("\nDescompactacao inicializada...\n");
+        printf("Descompactacao inicializada...\n");
 
         filaASCII = ler_tabela_arquivo(nome_arquivo_input);
 

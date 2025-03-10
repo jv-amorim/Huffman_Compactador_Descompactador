@@ -3,29 +3,36 @@
 #include "compactacao.h"
 #include "descompactacao.h"
 
-int main()
+int main(int argc, char* argv[])
 {
-    char arquivo_input_compactar[] = "texto_original_1.txt";
-    char arquivo_output_compactar[] = "texto_compactado.jva";
+    char modo;
+    char* arquivo_input;
+    char* arquivo_output;
 
-    char arquivo_input_descompactar[] = "texto_compactado.jva";
-    char arquivo_output_descompactar[] = "texto_descompactado.txt";
-
-    char resposta;
     printf("ALGORITMO DE COMPACTACAO E DESCOMPACTACAO\n\n");
-    printf("Deseja compactar ou descompactar? Digite C para compactar e D para descompactar: \n");
-    printf("Sua escolha: ");
-    scanf("%c", &resposta);
-    fflush(stdin);
 
-    if(resposta == 'C' || resposta == 'c')
+    if (argc != 4)
     {
-        compactar_arquivo(arquivo_input_compactar, arquivo_output_compactar);
-    }
-    else if(resposta == 'D' || resposta == 'd')
-    {	
-	descompactar_arquivo(arquivo_input_descompactar, arquivo_output_descompactar);
+        printf("Parâmetros incorretos. Uso correto: %s <modo (C ou D)> <arquivo input> <arquivo output>\n", argv[0]);
+        return 1;
     }
 
-    return 0;
+    modo = argv[1][0];
+    arquivo_input = argv[2];
+    arquivo_output = argv[3];
+
+    if (modo == 'C' || modo == 'c')
+    {
+        compactar_arquivo(arquivo_input, arquivo_output);
+        return 0;
+    }
+
+    if (modo == 'D' || modo == 'd')
+    {
+        descompactar_arquivo(arquivo_input, arquivo_output);
+        return 0;
+    }
+    
+    printf("Modo inválido. Use 'C' para compactar e 'D' para descompactar.\n");
+    return 1;
 }

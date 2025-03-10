@@ -192,6 +192,13 @@ int encontrar_caracteres_huffman(TNode *raiz, TNode *vertice_atual, int *conteud
     return posicao_atual_vetor;
 }
 
+void calcular_progresso(long posicao_atual, long tamanho_total)
+{
+    float progresso = ((float)posicao_atual / tamanho_total) * 100;
+    printf("Progresso: %.2f%%\r", progresso);
+    fflush(stdout);
+}
+
 void descompactar_arquivo(char* nome_arquivo_input, char* nome_arquivo_output)
 {
     FILE *arq_bin, *arq_txt;
@@ -226,6 +233,7 @@ void descompactar_arquivo(char* nome_arquivo_input, char* nome_arquivo_output)
 		while(posicao_atual_vetor < conteudo_do_arquivo->tamanho_vetor)
 		{
 			posicao_atual_vetor = encontrar_caracteres_huffman(tree, tree, conteudo_do_arquivo->vetor_conteudo, posicao_atual_vetor, nome_arquivo_output);
+            calcular_progresso(posicao_atual_vetor, conteudo_do_arquivo->tamanho_vetor);
 		}
 		
         printf("\nDESCOMPACTACAO CONCLUIDA!\n\n");
